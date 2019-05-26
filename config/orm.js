@@ -50,8 +50,8 @@ var orm = {
       cb(result);
     });
   },
-  insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+  insertOne: function(tableInput, cols, vals, cb) {
+    var queryString = "INSERT INTO " + tableInput;
 
     queryString += " (";
     queryString += cols.toString();
@@ -71,12 +71,12 @@ var orm = {
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  updateOne: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+  updateOne: function(tableInput, objColVals, condition, cb) {
+    var queryString = "UPDATE " + tableInput;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += " WHERE ";
+    queryString += " WHERE";
     queryString += condition;
 
     console.log(queryString);
@@ -89,9 +89,9 @@ var orm = {
     });
   },
 
-delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
+delete: function(tableInput, condition, cb) {
+    var queryString = "DELETE FROM " + tableInput;
+    queryString += "WHERE ";
     queryString += condition;
 
     connection.query(queryString, function(err, result) {

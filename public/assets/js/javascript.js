@@ -39,11 +39,9 @@ $(function() {
           console.log("created new burger");
           // Reload the page to get the updated list
           location.reload();
-        }
-      );
+        });
     });
 });
-
 //This part is not needed as we will not be deleting
     /*$(".delete-cat").on("click", function(event) {
       var id = $(this).data("id");
