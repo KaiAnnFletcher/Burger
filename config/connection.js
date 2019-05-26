@@ -15,6 +15,7 @@ let connection;
   database: "burgers_db"
  });
  }
+<<<<<<< HEAD
 // connection = mysql.createConnection({
 //   port: 3306,
 //   host: "localhost",
@@ -22,6 +23,15 @@ let connection;
 //   password: "root",
 //   database: "burgers_db"
 // });
+=======
+/*connection = mysql.createConnection({
+  port: 3306,
+  host: "localhost",
+  user: "root",
+  password: "root",
+  database: "burgers_db"
+});*/
+>>>>>>> master
 
 connection.connect(function(err) {
   if (err) {
